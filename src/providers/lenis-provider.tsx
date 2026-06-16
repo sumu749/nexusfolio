@@ -12,15 +12,12 @@ export default function LenisProvider({ children }: LenisProviderProps) {
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smooth: true,
-            direction: "vertical",
-            gestureDirection: "vertical",
-            smoothTouch: true,
+            orientation: "vertical",
+            gestureOrientation: "vertical",
             infinite: false,
-            normalizeWheel: true,
-            touchMultiplier: 2,
-            mouseMultiplier: 1,
+            wheelMultiplier: 1,
             lerp: 0.1,
+            autoRaf: false,
         });
 
         let frame: number;
