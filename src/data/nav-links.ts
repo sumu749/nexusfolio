@@ -12,7 +12,7 @@ export const navLinks = [
         href: "#skills",
     },
     {
-        name: "Education",
+        name: "Journey",
         href: "#education",
     },
     {
