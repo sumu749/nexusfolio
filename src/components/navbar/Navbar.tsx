@@ -14,25 +14,45 @@ export default function Navbar() {
             .map((item) => document.querySelector(item.href))
             .filter(Boolean) as HTMLElement[];
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visible = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const getActiveSection = () => {
+            const offset = window.innerHeight * 0.25;
+            const visible = sections.filter((section) => {
+                const rect = section.getBoundingClientRect();
+                return rect.top <= offset && rect.bottom > offset;
+            });
 
-                if (visible.length > 0) {
-                    setActiveHref(`#${visible[0].target.id}`);
-                }
-            },
-            {
-                rootMargin: "-40% 0px -55% 0px",
-                threshold: [0.1, 0.4, 0.75],
-            },
-        );
+            if (visible.length > 0) {
+                return visible[0];
+            }
 
-        sections.forEach((section) => observer.observe(section));
+            return (
+                sections
+                    .filter(
+                        (section) => section.getBoundingClientRect().top > 0,
+                    )
+                    .sort(
+                        (a, b) =>
+                            a.getBoundingClientRect().top -
+                            b.getBoundingClientRect().top,
+                    )[0] ?? sections[0]
+            );
+        };
 
-        return () => observer.disconnect();
+        const updateActiveLink = () => {
+            const activeSection = getActiveSection();
+            if (activeSection) {
+                setActiveHref(`#${activeSection.id}`);
+            }
+        };
+
+        updateActiveLink();
+        window.addEventListener("scroll", updateActiveLink, { passive: true });
+        window.addEventListener("resize", updateActiveLink);
+
+        return () => {
+            window.removeEventListener("scroll", updateActiveLink);
+            window.removeEventListener("resize", updateActiveLink);
+        };
     }, []);
 
     return (
