@@ -1,29 +1,27 @@
-import Footer from "../sections/Footer/Footer";
-import Contact from "../sections/Contact/Contact";
-import Navbar from "../sections/Navbar/Navbar";
-import Hero from "../sections/Hero/Hero";
-import About from "../sections/About/About";
-import Journey from "../sections/Journey/Journey";
-import Skills from "../sections/Skills/Skills";
-import Education from "../sections/Education/Education";
-import Experience from "../sections/Experience/Experience";
-import Projects from "../sections/Projects/Projects";
+import Navbar from "@/components/navbar/Navbar";
+import { About } from "@/components/about/About";
+import { Contact } from "@/components/contact/Contact";
+import { Education } from "@/components/education/Education";
+import { Experience } from "@/components/experience/Experience";
+import { Footer } from "@/components/footer/Footer";
+import { Hero } from "@/components/hero/Hero";
+import { ProjectsSection } from "@/components/projects/ProjectsSection";
+import { Skills } from "@/components/skills/Skills";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-slate-50">
+        <>
             <Navbar />
-            <main className="pt-28 flex min-h-screen flex-col">
+            <main className="mx-auto max-w-6xl px-6 py-10">
                 <Hero />
                 <About />
-                <Journey />
                 <Skills />
-                <Education />
                 <Experience />
-                <Projects />
+                <Education />
+                <ProjectsSection />
                 <Contact />
+                <Footer />
             </main>
-            <Footer />
-        </div>
+        </>
     );
 }
