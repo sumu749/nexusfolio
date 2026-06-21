@@ -23,9 +23,9 @@ export default function Projects() {
             {/* Background Glow */}
 
             <div className="absolute inset-0 -z-10">
-                <div className="absolute top-0 left-1/2 h-125 w-125 -translate-x-1/2 rounded-full bg-[#9B5DE0]/10 blur-[150px]" />
+                <div className="absolute top-0 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-[#9B5DE0]/10 blur-[150px] sm:h-72 sm:w-72 md:h-96 md:w-96" />
 
-                <div className="absolute bottom-0 right-0 h-75 w-75 rounded-full bg-[#4E56C0]/10 blur-[120px]" />
+                <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-[#4E56C0]/10 blur-[120px] sm:h-56 sm:w-56 md:h-72 md:w-72" />
             </div>
 
             <div className="container mx-auto px-6">
@@ -79,7 +79,7 @@ export default function Projects() {
                             <div className="grid lg:grid-cols-2">
                                 {/* IMAGE - Browser Mockup with Tilt */}
 
-                                <div className="relative h-130 p-6">
+                                <div className="relative aspect-4/3 w-full p-6">
                                     <Tilt
                                         glareEnable
                                         glareMaxOpacity={0.2}
@@ -96,7 +96,7 @@ export default function Projects() {
                                                 </div>
                                             </div>
 
-                                            <div className="relative h-118 w-full">
+                                            <div className="relative aspect-video w-full">
                                                 <Image
                                                     src={featuredProject.image}
                                                     alt={featuredProject.title}
@@ -270,10 +270,10 @@ export default function Projects() {
                 hover:border-[#9B5DE0]/50
               "
                         >
-                            <div className="grid md:grid-cols-[300px_1fr]">
+                            <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-6">
                                 {/* IMAGE */}
 
-                                <div className="relative h-75 md:h-80">
+                                <div className="relative aspect-video md:aspect-4/3 w-full">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
@@ -322,15 +322,7 @@ export default function Projects() {
                                         {project.techStack.map((tech) => (
                                             <span
                                                 key={tech}
-                                                className="
-                            rounded-full
-                            border
-                            border-white/10
-                            bg-white/5
-                            px-3
-                            py-1
-                            text-sm
-                          "
+                                                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm"
                                             >
                                                 {tech}
                                             </span>
@@ -344,21 +336,7 @@ export default function Projects() {
 
                 {/* Bottom CTA */}
 
-                <div
-                    className="
-            mt-16
-            rounded-[40px]
-            border
-            border-white/10
-            bg-linear-to-r
-            from-[#4E56C0]/10
-            via-[#9B5DE0]/10
-            to-[#D78FEE]/10
-            p-10
-            text-center
-            backdrop-blur-xl
-          "
-                >
+                <div className="mt-16 rounded-[40px] border border-white/10 bg-linear-to-r from-[#4E56C0]/10 via-[#9B5DE0]/10 to-[#D78FEE]/10 p-8 sm:p-10 text-center backdrop-blur-xl">
                     <h3 className="text-3xl font-bold">
                         Interested in working together?
                     </h3>
@@ -370,17 +348,7 @@ export default function Projects() {
 
                     <a
                         href="#contact"
-                        className="
-              mt-6
-              inline-flex
-              rounded-full
-              bg-linear-to-r
-              from-[#4E56C0]
-              to-[#9B5DE0]
-              px-6
-              py-3
-              font-medium
-            "
+                        className="mt-6 inline-flex rounded-full bg-linear-to-r from-[#4E56C0] to-[#9B5DE0] px-6 py-3 font-medium"
                     >
                         Let&apos;s Talk
                     </a>

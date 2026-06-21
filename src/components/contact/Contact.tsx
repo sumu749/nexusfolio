@@ -55,7 +55,7 @@ export default function Contact() {
     return (
         <section id="contact" className="relative pt-20 overflow-hidden">
             <div className="absolute inset-0 -z-10">
-                <div className="absolute left-1/2 top-0 h-100 w-100 -translate-x-1/2 rounded-full bg-[#9B5DE0]/10 blur-[150px]" />
+                <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#9B5DE0]/10 blur-[150px] sm:h-80 sm:w-80 md:h-96 md:w-96" />
             </div>
 
             <div className="container mx-auto px-6">

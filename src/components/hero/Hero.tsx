@@ -16,7 +16,7 @@ export function Hero() {
         >
             {/* Background Glow */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
             </div>
 
             <motion.div
@@ -40,7 +40,7 @@ export function Hero() {
                             👋 Welcome to Nexusfolio
                         </motion.p>
 
-                        <h1 className="text-5xl lg:text-6xl font-bold mb-4">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                             Hi, I&apos;m{" "}
                             <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                                 Sumaiya Alam

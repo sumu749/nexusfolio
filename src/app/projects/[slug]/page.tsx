@@ -38,7 +38,7 @@ export default async function ProjectDetails({ params }: Props) {
 
                 {/* Hero */}
                 <div className="overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl">
-                    <div className="relative h-125">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden">
                         <Image
                             src={project.image}
                             alt={project.title}
