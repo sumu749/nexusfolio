@@ -45,6 +45,7 @@ export default function HeroImage() {
                         alt="Sumaiya Alam"
                         width={350}
                         height={450}
+                        quality={100}
                         className="w-full h-auto"
                         priority
                     />

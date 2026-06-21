@@ -43,6 +43,7 @@ export default async function ProjectDetails({ params }: Props) {
                             src={project.image}
                             alt={project.title}
                             fill
+                            quality={100}
                             className="object-cover"
                         />
                     </div>

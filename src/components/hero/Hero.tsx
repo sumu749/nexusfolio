@@ -7,8 +7,11 @@ import HeroImage from "./HeroImage";
 
 export function Hero() {
     return (
-        <section
+        <motion.section
             id="home"
+            initial={{ opacity: 0, y: 16, scale: 0.995 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.85, ease: "easeOut" }}
             className="min-h-screen relative overflow-hidden py-20"
         >
             {/* Background Glow */}
@@ -138,6 +141,6 @@ export function Hero() {
                     <HeroImage />
                 </div>
             </motion.div>
-        </section>
+        </motion.section>
     );
 }

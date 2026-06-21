@@ -101,6 +101,7 @@ export default function Projects() {
                                                     src={featuredProject.image}
                                                     alt={featuredProject.title}
                                                     fill
+                                                    quality={100}
                                                     priority
                                                     sizes="(max-width: 1024px) 100vw, 50vw"
                                                     className="object-cover"
@@ -277,6 +278,7 @@ export default function Projects() {
                                         src={project.image}
                                         alt={project.title}
                                         fill
+                                        quality={100}
                                         className="
                       object-cover
                       transition-all

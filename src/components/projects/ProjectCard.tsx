@@ -32,6 +32,7 @@ export default function ProjectCard({ project, featured = false }: Props) {
                     src={project.image}
                     alt={project.title}
                     fill
+                    quality={100}
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
