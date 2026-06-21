@@ -1,16 +1,15 @@
 export interface Project {
     slug: string;
     title: string;
-    image: string;
+    category: string;
     description: string;
-
-    techStack: string[];
-
-    github: string;
-
+    image: string;
     live: string;
-
+    github: string;
+    techStack: string[];
     challenges: string[];
-
     futurePlans: string[];
+    overview?: string;
+    features?: string[];
+    featured?: boolean;
 }

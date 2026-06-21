@@ -48,7 +48,7 @@ export default function TimelineCard({ item, side, index }: TimelineCardProps) {
             </div>
 
             <div
-                className={`order-4 rounded-[2rem] border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-blue-950/20 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 ${
+                className={`order-4 rounded-4xl border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-blue-950/20 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 ${
                     side === "right" ? "lg:mr-8" : "lg:ml-8"
                 }`}
             >

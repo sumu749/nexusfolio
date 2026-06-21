@@ -3,25 +3,25 @@ export const timelineData = [
         type: "education",
         year: "2023 - Present",
         title: "Bachelor of Science",
-        institution: "Your University Name",
+        institution: "TMSS Engineering College, Bogura",
         description:
             "Studying Computer Science and Engineering while building modern web applications and exploring software engineering.",
     },
 
     {
         type: "education",
-        year: "2021 - 2023",
+        year: "2018 - 2021",
         title: "Higher Secondary Certificate",
-        institution: "Your College Name",
+        institution: "Kurigram Government Women's College, Kurigram",
         description:
             "Completed HSC with a strong interest in technology and programming.",
     },
 
     {
         type: "experience",
-        year: "2024 - Present",
+        year: "2025 - Present",
         title: "MERN Stack Developer",
-        institution: "Personal & Freelance Projects",
+        institution: "Personal Projects",
         description:
             "Building full-stack applications using React, Next.js, Express, MongoDB, and Firebase.",
     },

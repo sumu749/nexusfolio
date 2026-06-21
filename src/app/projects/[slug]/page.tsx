@@ -1,98 +1,148 @@
-import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowLeft, Globe, ExternalLink } from "lucide-react";
 import { projects } from "@/data/projects";
-import type { Metadata } from "next";
 
-type PageProps = {
-    params: {
+type Props = {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 };
 
-export function generateMetadata({ params }: PageProps): Metadata {
-    const project = projects.find((entry) => entry.slug === params.slug);
-
-    return {
-        title: project?.title ?? "Project not found",
-        description:
-            project?.description ?? "Project details for this project.",
-    };
+export async function generateStaticParams() {
+    return projects.map((project) => ({
+        slug: project.slug,
+    }));
 }
 
-export default function ProjectPage({ params }: PageProps) {
-    const project = projects.find((entry) => entry.slug === params.slug);
+export default async function ProjectDetails({ params }: Props) {
+    const { slug } = await params;
+    const project = projects.find((project) => project.slug === slug);
 
     if (!project) {
-        return notFound();
+        notFound();
     }
 
     return (
-        <section className="mx-auto max-w-5xl space-y-8 py-12">
-            <Link href="/" className="text-sm text-white/70 hover:text-white">
-                ← Back to home
-            </Link>
+        <main className="min-h-screen pt-32 pb-20">
+            <div className="container mx-auto px-6">
+                {/* Back */}
+                <Link
+                    href="/"
+                    className="mb-8 inline-flex items-center gap-2 text-slate-400"
+                >
+                    <ArrowLeft size={18} />
+                    Back to Home
+                </Link>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-black/5">
-                <div className="space-y-4">
-                    <h1 className="text-4xl font-semibold">{project.title}</h1>
-                    <p className="text-slate-300">{project.description}</p>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-4 rounded-3xl border border-white/10 bg-black/20 p-6">
-                        <h2 className="text-xl font-semibold">Tech stack</h2>
-                        <ul className="space-y-2 text-slate-200">
-                            {project.techStack.map((tech) => (
-                                <li key={tech}>• {tech}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="space-y-4 rounded-3xl border border-white/10 bg-black/20 p-6">
-                        <h2 className="text-xl font-semibold">Links</h2>
-                        <div className="space-y-2 text-slate-200">
-                            <p>
-                                GitHub:{" "}
-                                <a
-                                    className="text-white underline"
-                                    href={project.github}
-                                >
-                                    {project.github}
-                                </a>
-                            </p>
-                            <p>
-                                Live:{" "}
-                                <a
-                                    className="text-white underline"
-                                    href={project.live}
-                                >
-                                    {project.live}
-                                </a>
-                            </p>
-                        </div>
+                {/* Hero */}
+                <div className="overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl">
+                    <div className="relative h-[500px]">
+                        <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                        />
                     </div>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
-                    <div className="rounded-3xl border border-white/10 bg-black/20 p-6">
-                        <h2 className="text-xl font-semibold">Challenges</h2>
-                        <ul className="list-disc space-y-2 pl-5 text-slate-200">
-                            {project.challenges.map((challenge) => (
-                                <li key={challenge}>{challenge}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/10 bg-black/20 p-6">
-                        <h2 className="text-xl font-semibold">Future plans</h2>
-                        <ul className="list-disc space-y-2 pl-5 text-slate-200">
-                            {project.futurePlans.map((plan) => (
-                                <li key={plan}>{plan}</li>
-                            ))}
-                        </ul>
-                    </div>
+                {/* Content */}
+                <div className="mt-12">
+                    <span className="text-[#D78FEE]">CASE STUDY</span>
+                    <h1 className="mt-4 text-5xl font-bold">{project.title}</h1>
+                    <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-400">
+                        {project.overview}
+                    </p>
                 </div>
+
+                {/* Buttons */}
+                <div className="mt-10 flex flex-wrap gap-4">
+                    <Link
+                        href={project.live}
+                        target="_blank"
+                        className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#4E56C0] to-[#9B5DE0] px-6 py-3"
+                    >
+                        <Globe size={18} />
+                        Live Site
+                    </Link>
+                    <Link
+                        href={project.github}
+                        target="_blank"
+                        className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3"
+                    >
+                        <ExternalLink size={18} />
+                        Github
+                    </Link>
+                </div>
+
+                {/* Tech Stack */}
+                <section className="mt-20">
+                    <h2 className="mb-8 text-3xl font-bold">
+                        Technology Stack
+                    </h2>
+                    <div className="flex flex-wrap gap-4">
+                        {project.techStack.map((tech) => (
+                            <div
+                                key={tech}
+                                className="rounded-full border border-white/10 bg-white/5 px-4 py-2"
+                            >
+                                {tech}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Features */}
+                <section className="mt-20">
+                    <h2 className="mb-8 text-3xl font-bold">Key Features</h2>
+                    <div className="grid gap-4 md:grid-cols-2">
+                        {project.features?.map((feature) => (
+                            <div
+                                key={feature}
+                                className="rounded-3xl border border-white/10 bg-white/5 p-5"
+                            >
+                                ✓ {feature}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Challenges */}
+                <section className="mt-20">
+                    <h2 className="mb-8 text-3xl font-bold">
+                        Challenges Faced
+                    </h2>
+                    <div className="space-y-4">
+                        {project.challenges.map((challenge) => (
+                            <div
+                                key={challenge}
+                                className="rounded-3xl border border-white/10 bg-white/5 p-5"
+                            >
+                                {challenge}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Future Plans */}
+                <section className="mt-20">
+                    <h2 className="mb-8 text-3xl font-bold">
+                        Future Improvements
+                    </h2>
+                    <div className="space-y-4">
+                        {project.futurePlans.map((plan) => (
+                            <div
+                                key={plan}
+                                className="rounded-3xl border border-white/10 bg-white/5 p-5"
+                            >
+                                🚀 {plan}
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
-        </section>
+        </main>
     );
 }
