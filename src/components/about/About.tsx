@@ -25,7 +25,7 @@ const stats = [
 export function About() {
     return (
         <section id="about" className="py-20 scroll-mt-24">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-10 shadow-2xl shadow-blue-950/20">
+            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-slate-950/80 p-10 shadow-2xl shadow-blue-950/20">
                 <div className="absolute -right-28 top-8 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
                 <div className="absolute -left-20 bottom-12 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
 
@@ -50,7 +50,7 @@ export function About() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.7 }}
-                            className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8"
+                            className="rounded-4xl border border-white/10 bg-slate-900/80 p-8"
                         >
                             <div className="mb-6 flex items-center gap-3 text-cyan-300">
                                 <Rocket size={24} />
@@ -99,7 +99,7 @@ export function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.7, delay: 0.1 }}
-                                className="grid gap-4 rounded-[2rem] border border-white/10 bg-slate-900/80 p-6"
+                                className="grid gap-4 rounded-4xl border border-white/10 bg-slate-900/80 p-6"
                             >
                                 <div className="flex items-start gap-4 rounded-3xl border border-white/5 bg-slate-950/80 p-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-blue-500/10 text-blue-300">

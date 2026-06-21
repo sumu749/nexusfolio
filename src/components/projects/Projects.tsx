@@ -96,7 +96,7 @@ export default function Projects() {
                                                 </div>
                                             </div>
 
-                                            <div className="relative h-[472px] w-full">
+                                            <div className="relative h-118 w-full">
                                                 <Image
                                                     src={featuredProject.image}
                                                     alt={featuredProject.title}
@@ -272,7 +272,7 @@ export default function Projects() {
                             <div className="grid md:grid-cols-[300px_1fr]">
                                 {/* IMAGE */}
 
-                                <div className="relative h-[300px] md:h-[320px]">
+                                <div className="relative h-75 md:h-80">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
