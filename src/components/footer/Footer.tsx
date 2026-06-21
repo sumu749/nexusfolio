@@ -22,7 +22,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-2xl font-bold">Sumaiya Alam</h3>
                         <p className="mt-3 text-sm text-slate-400">
-                            Software Engineer · Open to opportunities
+                            MERN Stack Developer · Open to opportunities
                         </p>
 
                         <div className="mt-6 flex gap-4">
