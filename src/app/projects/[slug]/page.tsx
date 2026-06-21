@@ -38,7 +38,7 @@ export default async function ProjectDetails({ params }: Props) {
 
                 {/* Hero */}
                 <div className="overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl">
-                    <div className="relative h-[500px]">
+                    <div className="relative h-125">
                         <Image
                             src={project.image}
                             alt={project.title}
@@ -62,7 +62,7 @@ export default async function ProjectDetails({ params }: Props) {
                     <Link
                         href={project.live}
                         target="_blank"
-                        className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#4E56C0] to-[#9B5DE0] px-6 py-3"
+                        className="flex items-center gap-2 rounded-full bg-linear-to-r from-[#4E56C0] to-[#9B5DE0] px-6 py-3"
                     >
                         <Globe size={18} />
                         Live Site

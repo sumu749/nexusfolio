@@ -36,13 +36,15 @@ export default function Contact() {
                 setMessage("");
                 setTimeout(() => setStatus("idle"), 3000);
             } else {
-                const data = (await res.json().catch(() => ({
-                    error: "Submission failed",
-                }))) as { error?: string };
+                let data: { error?: string } = { error: "Submission failed" };
+                try {
+                    data = await res.json();
+                } catch (err) {
+                    // ignore parse errors
+                }
                 setErrorMsg(data?.error || "Submission failed");
                 setStatus("error");
             }
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setErrorMsg("Network error — please try again later.");
             setStatus("error");
@@ -50,7 +52,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="relative py-32 overflow-hidden">
+        <section id="contact" className="relative pt-20 overflow-hidden">
             <div className="absolute inset-0 -z-10">
                 <div className="absolute left-1/2 top-0 h-100 w-100 -translate-x-1/2 rounded-full bg-[#9B5DE0]/10 blur-[150px]" />
             </div>
@@ -140,25 +142,32 @@ export default function Contact() {
                     >
                         <div className="space-y-5">
                             <input
+                                name="name"
+                                required
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="Your Name"
-                                className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 outline-none"
+                                className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 outline-none focus-visible:ring-4 focus-visible:ring-[#9B5DE0]/20"
                                 aria-label="Your name"
                             />
                             <input
+                                name="email"
+                                type="email"
+                                required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email Address"
-                                className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 outline-none"
+                                className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 outline-none focus-visible:ring-4 focus-visible:ring-[#9B5DE0]/20"
                                 aria-label="Email address"
                             />
                             <textarea
+                                name="message"
+                                required
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                                 rows={6}
                                 placeholder="Write your message..."
-                                className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 outline-none"
+                                className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 outline-none focus-visible:ring-4 focus-visible:ring-[#9B5DE0]/20"
                                 aria-label="Message"
                             />
 
@@ -176,7 +185,7 @@ export default function Contact() {
                             <button
                                 type="submit"
                                 disabled={status === "sending"}
-                                className="w-full rounded-full bg-linear-to-r from-[#4E56C0] to-[#9B5DE0] py-4 font-medium disabled:opacity-60"
+                                className="w-full rounded-full btn-gradient py-4 font-medium disabled:opacity-60 transition-transform hover:-translate-y-0.5 focus-visible:outline-none"
                             >
                                 {status === "sending"
                                     ? "Sending..."

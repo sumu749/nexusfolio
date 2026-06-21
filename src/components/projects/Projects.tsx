@@ -18,7 +18,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="relative py-32 scroll-mt-32 overflow-hidden"
+            className="relative pt-20 scroll-mt-32 overflow-hidden"
         >
             {/* Background Glow */}
 
