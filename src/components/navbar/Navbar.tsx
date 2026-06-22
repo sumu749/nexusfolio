@@ -83,9 +83,9 @@ export default function Navbar() {
                 y: isHidden ? -80 : 0,
             }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="fixed top-4 left-1/2 z-50 w-full max-w-[100vw] -translate-x-1/2 px-4 sm:px-6"
+            className="sticky top-0 z-50 w-full px-4 sm:px-6"
         >
-            <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 rounded-full border border-white/10 bg-slate-950/95 px-4 py-3 shadow-[0_25px_80px_rgba(0,0,0,0.18)] backdrop-blur-xl md:px-6">
+            <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4  md:px-6 ">
                 {/* Logo */}
                 <Link
                     href="#home"

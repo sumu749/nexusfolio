@@ -10,7 +10,7 @@ export default function HeroImage() {
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative mx-auto max-w-lg md:max-w-xl"
+            className="relative"
         >
             {/* Background Glow */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl"></div>
@@ -39,13 +39,13 @@ export default function HeroImage() {
                 ></motion.div>
 
                 {/* Photo */}
-                <div className="relative rounded-2xl overflow-hidden border border-blue-500/30 mb-6 aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5]">
+                <div className="relative rounded-2xl overflow-hidden border border-blue-500/30 mb-6">
                     <Image
                         src="/images/portfolio.png"
                         alt="Sumaiya Alam"
-                        fill
-                        quality={100}
-                        className="object-cover"
+                        width={350}
+                        height={450}
+                        className="w-full h-auto"
                         priority
                     />
 
