@@ -4,15 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import { navLinks } from "@/data/nav-links";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
     const [activeHref, setActiveHref] = useState("#home");
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isHidden, setIsHidden] = useState(false);
-    const lastScrollY = useRef(0);
-    const isHiddenRef = useRef(false);
-    const rafId = useRef<number | null>(null);
 
     const handleLinkClick = (href: string) => {
         setActiveHref(href);
@@ -24,12 +20,11 @@ export default function Navbar() {
             .map((item) => document.querySelector(item.href))
             .filter(Boolean) as HTMLElement[];
 
-        if (!sections.length) {
-            return;
-        }
+        if (!sections.length) return;
 
         const updateActiveSection = () => {
             const targetPosition = window.scrollY + window.innerHeight * 0.35;
+
             let currentSection = sections[0];
 
             for (const section of sections) {
@@ -43,35 +38,15 @@ export default function Navbar() {
             setActiveHref(`#${currentSection.id}`);
         };
 
-        const handleScroll = () => {
-            if (rafId.current !== null) return;
-
-            rafId.current = requestAnimationFrame(() => {
-                const currentY = window.scrollY;
-                updateActiveSection();
-
-                const shouldHide =
-                    currentY > lastScrollY.current && currentY > 80;
-                if (shouldHide !== isHiddenRef.current) {
-                    isHiddenRef.current = shouldHide;
-                    setIsHidden(shouldHide);
-                }
-
-                lastScrollY.current = currentY;
-                rafId.current = null;
-            });
-        };
-
         updateActiveSection();
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        window.addEventListener("resize", handleScroll);
+
+        window.addEventListener("scroll", updateActiveSection);
+        window.addEventListener("resize", updateActiveSection);
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("resize", handleScroll);
-            if (rafId.current !== null) {
-                cancelAnimationFrame(rafId.current);
-            }
+            window.removeEventListener("scroll", updateActiveSection);
+
+            window.removeEventListener("resize", updateActiveSection);
         };
     }, []);
 
@@ -79,11 +54,23 @@ export default function Navbar() {
         <motion.header
             initial={{ opacity: 0, y: -25 }}
             animate={{
-                opacity: isHidden ? 0 : 1,
-                y: isHidden ? -80 : 0,
+                opacity: 1,
+                y: 0,
             }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="sticky top-0 z-50 w-full px-4 sm:px-6"
+            transition={{
+                duration: 0.6,
+                ease: "easeOut",
+            }}
+            className="
+        fixed
+        top-5
+        left-1/2
+        z-50
+        w-full
+        -translate-x-1/2
+        px-4
+        sm:px-6
+    "
         >
             <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4  md:px-6 ">
                 {/* Logo */}
