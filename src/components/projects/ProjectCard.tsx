@@ -24,8 +24,8 @@ export default function ProjectCard({ project, featured = false }: Props) {
             <div
                 className={
                     featured
-                        ? "relative overflow-hidden aspect-[4/3]"
-                        : "relative overflow-hidden aspect-[16/9]"
+                        ? "relative overflow-hidden aspect-4/3"
+                        : "relative overflow-hidden aspect-video"
                 }
             >
                 <Image
