@@ -2,6 +2,41 @@ import { Project } from "@/types/project";
 
 export const projects: Project[] = [
     {
+        slug: "skillforge-ai",
+        title: "Skillforge AI",
+        description:
+            "AI-powered learning companion for developers, offering personalized project scaffolding, intelligent code assistance, and guided skill growth.",
+
+        image: "/projects/skillforge-ai.png",
+
+        live: "https://skill-forge-ai-api.vercel.app/",
+        github: "https://github.com/sumu749/skillForgeAI",
+
+        techStack: ["Next.js", "TypeScript", "Tailwind", "OpenAI", "Node.js"],
+
+        challenges: [
+            "Personalized learning recommendations",
+
+            "Adaptive project scaffolding",
+        ],
+        futurePlans: [
+            "Integrated portfolio generator",
+            "Live collaboration",
+            "Expanded AI curriculum",
+        ],
+        overview:
+            "Skillforge AI is a developer-focused learning platform that adapts training paths and starter code to each user’s goals.",
+        features: [
+            "AI Tutor chat is powered by OpenAI via the backend API.",
+            "AI course recommendations are delivered through the tutor experience and dashboard context.",
+            "The backend reads OPENAI_API_KEY and OPENAI_MODEL from environment variables.",
+            "The chat feature is available through the dashboard UI when users are signed in.",
+        ],
+        featured: true,
+        category: "AI Platform",
+    },
+
+    {
         slug: "etuition-bd",
         title: "eTuition BD",
         description:
