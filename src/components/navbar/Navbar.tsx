@@ -84,7 +84,7 @@ export default function Navbar() {
                 {/* Navigation Dock */}
 
                 <div className="flex items-center gap-2">
-                    <div className="hidden md:flex relative flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/5/20 px-3 py-3 backdrop-blur-2xl shadow-[0_0_40px_rgba(155,93,224,0.15)]">
+                    <div className="hidden lg:flex relative flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/5/20 px-3 py-3 backdrop-blur-2xl shadow-[0_0_40px_rgba(155,93,224,0.15)]">
                         {navLinks.map((item) => {
                             const active = activeHref === item.href;
 
