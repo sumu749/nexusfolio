@@ -137,7 +137,7 @@ export default function Navbar() {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#4E56C0]/20 bg-[#0B1020] px-4 py-2 text-sm font-medium text-white shadow-[0_0_25px_rgba(78,86,192,0.25)] transition-all hover:border-[#9B5DE0]/40 hover:bg-[#111827] sm:px-5 sm:py-3"
+                    className="hidden md:inline-flex items-center gap-2 rounded-full border border-[#4E56C0]/20 bg-[#0B1020] px-4 py-2 text-sm font-medium text-white shadow-[0_0_25px_rgba(78,86,192,0.25)] transition-all hover:border-[#9B5DE0]/40 hover:bg-[#111827] sm:px-5 sm:py-3"
                 >
                     <Download size={16} />
                     Hire Me
@@ -165,6 +165,15 @@ export default function Navbar() {
                                 </Link>
                             );
                         })}
+
+                        <a
+                            href="/resume.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block rounded-3xl border border-white/10 bg-[#0B1020] px-4 py-3 text-sm font-medium text-white transition hover:border-[#9B5DE0]/30 hover:bg-[#111827]"
+                        >
+                            Hire Me
+                        </a>
                     </div>
                 </div>
             )}
