@@ -78,7 +78,7 @@ export default function Navbar() {
                     href="#home"
                     className="text-2xl font-bold tracking-tight bg-linear-to-r from-[#A78BFA] via-[#C084FC] to-[#F9A8D4] bg-clip-text text-transparent"
                 >
-                    Nexusfolio
+                    Sumaiya Alam
                 </Link>
 
                 {/* Navigation Dock */}

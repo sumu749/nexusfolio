@@ -20,7 +20,12 @@ export default function Footer() {
             <div className="container mx-auto px-6 py-16">
                 <div className="lg:flex lg:items-start lg:justify-between">
                     <div>
-                        <h3 className="text-2xl font-bold">Sumaiya Alam</h3>
+                        <Link
+                            href="#home"
+                            className="text-2xl font-bold tracking-tight bg-linear-to-r from-[#A78BFA] via-[#C084FC] to-[#F9A8D4] bg-clip-text text-transparent"
+                        >
+                            Sumaiya Alam
+                        </Link>
                         <p className="mt-3 text-sm text-slate-400">
                             MERN Stack Developer · Open to opportunities
                         </p>
