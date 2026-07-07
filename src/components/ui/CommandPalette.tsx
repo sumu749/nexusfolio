@@ -60,7 +60,7 @@ const commands = [
     {
         id: "resume",
         name: "Resume",
-        href: "/resume.pdf",
+        href: "/resume",
         icon: Download,
         external: true,
     },
