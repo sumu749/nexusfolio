@@ -60,7 +60,7 @@ const commands = [
     {
         id: "resume",
         name: "Resume",
-        href: "/resume",
+        href: "https://drive.google.com/file/d/1qLXtgys8bmMLHlnH8MaDDyImLaScPzR7/view?usp=drive_link",
         icon: Download,
         external: true,
     },
