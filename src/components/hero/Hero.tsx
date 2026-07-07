@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { Code2, Briefcase, Mail, Download, Send } from "lucide-react";
+import { Code2, Briefcase, Mail, ExternalLink, Send } from "lucide-react";
 import HeroImage from "./HeroImage";
 
 export function Hero() {
@@ -79,10 +79,12 @@ export function Hero() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition"
                             >
-                                <Download size={20} />
-                                Download Resume
+                                <ExternalLink size={20} />
+                                View Resume
                             </motion.a>
 
                             <motion.a
