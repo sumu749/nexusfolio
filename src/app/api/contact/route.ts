@@ -156,7 +156,7 @@ export async function POST(req: Request) {
     });
 
     try {
-        const { error } = await resend.emails.send({
+        const response = await resend.emails.send({
             from: sender,
             to: recipient,
             replyTo: email,
@@ -165,13 +165,18 @@ export async function POST(req: Request) {
             text: `Name: ${name}\nEmail: ${email}\nSubmitted: ${submittedAt}\n\n${message}`,
         });
 
-        if (error) {
-            console.error("Resend failed to send contact email", error);
+        if (response.error) {
+            console.error(
+                "Resend failed to send contact email",
+                response.error,
+            );
             return NextResponse.json(
                 {
-                    error: "Failed to send your message. Please try again later.",
+                    error:
+                        response.error.message ||
+                        "Failed to send your message. Please try again later.",
                 },
-                { status: 502 },
+                { status: response.error.statusCode ?? 502 },
             );
         }
 
