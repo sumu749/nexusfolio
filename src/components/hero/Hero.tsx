@@ -53,7 +53,7 @@ export function Hero() {
                                     words={[
                                         "Full Stack Developer",
                                         "React Enthusiast",
-                                        "UI/UX Designer",
+                                        "MERN Developer",
                                         "Problem Solver",
                                     ]}
                                     loop={true}
