@@ -159,7 +159,6 @@ export async function POST(req: Request) {
         const response = await resend.emails.send({
             from: sender,
             to: recipient,
-            replyTo: email,
             subject: `New portfolio message from ${name}`,
             html: buildEmailHtml({ name, email, message, submittedAt }),
             text: `Name: ${name}\nEmail: ${email}\nSubmitted: ${submittedAt}\n\n${message}`,
