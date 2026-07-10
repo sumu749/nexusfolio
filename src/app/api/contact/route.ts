@@ -46,6 +46,12 @@ function validateContactPayload(body: ContactPayload): ValidationResult {
     return { valid: Object.keys(fieldErrors).length === 0, fieldErrors };
 }
 
+function sanitizeHeaderValue(value: string): string {
+    // Strips CR/LF so user input can never inject extra email headers
+    // (e.g. via the Subject line, which is built from the visitor's name).
+    return value.replace(/[\r\n]/g, " ").trim();
+}
+
 function escapeHtml(value: string): string {
     return value
         .replace(/&/g, "&amp;")
@@ -156,26 +162,22 @@ export async function POST(req: Request) {
     });
 
     try {
-        const response = await resend.emails.send({
+        const { error } = await resend.emails.send({
             from: sender,
             to: recipient,
-            subject: `New portfolio message from ${name}`,
+            replyTo: sanitizeHeaderValue(email),
+            subject: `New portfolio message from ${sanitizeHeaderValue(name)}`,
             html: buildEmailHtml({ name, email, message, submittedAt }),
             text: `Name: ${name}\nEmail: ${email}\nSubmitted: ${submittedAt}\n\n${message}`,
         });
 
-        if (response.error) {
-            console.error(
-                "Resend failed to send contact email",
-                response.error,
-            );
+        if (error) {
+            console.error("Resend failed to send contact email", error);
             return NextResponse.json(
                 {
-                    error:
-                        response.error.message ||
-                        "Failed to send your message. Please try again later.",
+                    error: "Failed to send your message. Please try again later.",
                 },
-                { status: response.error.statusCode ?? 502 },
+                { status: 502 },
             );
         }
 
