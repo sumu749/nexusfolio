@@ -2,6 +2,53 @@ import { Project } from "@/types/project";
 
 export const projects: Project[] = [
     {
+        slug: "loomify",
+        title: "Loomify",
+        description:
+            "Full-stack fashion e-commerce platform with a responsive storefront, authenticated customer accounts, and an admin workspace for catalog and order management.",
+
+        image: "/projects/loomify.svg",
+
+        live: "https://loomify-fashion-store.vercel.app/",
+        github: "https://github.com/sumu749/loomify-fashion-store",
+
+        techStack: [
+            "Next.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Prisma",
+            "Better Auth",
+            "React Query",
+            "Redux Toolkit",
+            "Tailwind",
+            "Framer Motion",
+            "Zod",
+        ],
+
+        challenges: [
+            "Catalog and order management",
+            "Authenticated customer experience",
+            "Reliable server and client state",
+        ],
+        futurePlans: [
+            "Payment integration",
+            "Wishlist and product reviews",
+            "Personalized recommendations",
+        ],
+        overview:
+            "Loomify is a full-stack fashion e-commerce application for browsing clothing, footwear, and accessories, with customer accounts and an administrative workspace for managing products and orders.",
+        features: [
+            "Responsive fashion storefront",
+            "Authenticated customer accounts",
+            "Admin catalog management",
+            "Order management workspace",
+            "Validated product and account flows",
+        ],
+        featured: true,
+        category: "E-commerce",
+    },
+
+    {
         slug: "skillforge-ai",
         title: "Skillforge AI",
         description:

@@ -10,26 +10,42 @@ export const skillCategories = [
             "Next.js",
             "Tailwind CSS",
             "Redux Toolkit",
+            "TanStack Query",
+            "Framer Motion",
         ],
     },
 
     {
-        title: "Backend",
+        title: "Backend & APIs",
         skills: [
             "Node.js",
             "Express.js",
-            "MongoDB",
-            "Firebase",
             "JWT",
             "REST API",
+            "OpenAI API",
+            "Zod",
         ],
     },
 
     {
-        title: "Tools & Others",
+        title: "Databases & Services",
+        skills: [
+            "MongoDB",
+            "PostgreSQL",
+            "Prisma",
+            "Firebase",
+            "Better Auth",
+            "Stripe",
+        ],
+    },
+
+    {
+        title: "DevOps & Tools",
         skills: [
             "Git",
             "GitHub",
+            "CI/CD",
+            "Docker",
             "VS Code",
             "Postman",
             "Figma",

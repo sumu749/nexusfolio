@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Loomify fashion store</title>
+  <desc id="desc">A warm editorial cover for the Loomify fashion e-commerce project.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17151a" />
+      <stop offset="0.55" stop-color="#3e2a2b" />
+      <stop offset="1" stop-color="#b56b4a" />
+    </linearGradient>
+    <linearGradient id="fabric" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7d7bd" />
+      <stop offset="1" stop-color="#a95042" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#background)" />
+  <circle cx="1280" cy="170" r="310" fill="#e6a77d" opacity="0.18" />
+  <path d="M930 900c-30-210 15-405 154-526 104-91 190-144 291-208 64 165 67 451-53 734H930Z" fill="url(#fabric)" opacity="0.92" />
+  <path d="M1072 402c80-85 166-138 279-194 31 80 41 174 35 267-109-28-218-42-314-73Z" fill="#f8e3d1" opacity="0.28" />
+  <path d="M1040 486c102 43 213 75 346 92M1003 579c120 45 252 75 376 86M985 683c118 37 244 57 363 62" fill="none" stroke="#fff4e7" stroke-width="4" opacity="0.32" />
+  <text x="110" y="390" fill="#f8eee6" font-family="Georgia, serif" font-size="116" letter-spacing="8">LOOMIFY</text>
+  <text x="120" y="462" fill="#f3c8a8" font-family="Arial, sans-serif" font-size="24" letter-spacing="10">FASHION / FORM / EVERYDAY</text>
+  <path d="M120 520h290" stroke="#f3c8a8" stroke-width="2" />
+</svg>
