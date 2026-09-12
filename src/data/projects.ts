@@ -7,7 +7,7 @@ export const projects: Project[] = [
         description:
             "Full-stack fashion e-commerce platform with a responsive storefront, authenticated customer accounts, and an admin workspace for catalog and order management.",
 
-        image: "/projects/loomify.svg",
+        image: "/projects/Loomify.png",
 
         live: "https://loomify-fashion-store.vercel.app/",
         github: "https://github.com/sumu749/loomify-fashion-store",
@@ -43,6 +43,18 @@ export const projects: Project[] = [
             "Admin catalog management",
             "Order management workspace",
             "Validated product and account flows",
+        ],
+        highlights: [
+            { label: "Customer Authentication", icon: "shield" },
+            { label: "Admin Dashboard", icon: "dashboard" },
+            { label: "Product API Integration", icon: "zap" },
+            { label: "Responsive Storefront", icon: "smartphone" },
+        ],
+        metrics: [
+            { label: "Better Auth", icon: "lock" },
+            { label: "Catalog Management", icon: "package" },
+            { label: "Order Management", icon: "shopping-bag" },
+            { label: "PostgreSQL + Prisma", icon: "database" },
         ],
         featured: true,
         category: "E-commerce",

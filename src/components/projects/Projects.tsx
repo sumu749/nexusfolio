@@ -5,11 +5,64 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-import { ArrowUpRight, Code2, Globe, Sparkles } from "lucide-react";
+import {
+    ArrowUpRight,
+    Code2,
+    Database,
+    Globe,
+    LayoutDashboard,
+    LockKeyhole,
+    PackageCheck,
+    ShieldCheck,
+    ShoppingBag,
+    Smartphone,
+    Sparkles,
+    Zap,
+} from "lucide-react";
 import Tilt from "react-parallax-tilt";
 import { techIcons } from "@/lib/project-icons";
+import type { ProjectCallout } from "@/types/project";
 
 import { projects } from "@/data/projects";
+
+const calloutIcons = {
+    database: Database,
+    dashboard: LayoutDashboard,
+    lock: LockKeyhole,
+    package: PackageCheck,
+    shield: ShieldCheck,
+    "shopping-bag": ShoppingBag,
+    smartphone: Smartphone,
+    zap: Zap,
+} as const;
+
+function ProjectCallouts({ items }: { items?: ProjectCallout[] }) {
+    if (!items?.length) return null;
+
+    return (
+        <div className="mt-8 grid grid-cols-2 gap-4">
+            {items.map((item) => {
+                const Icon =
+                    calloutIcons[item.icon as keyof typeof calloutIcons];
+
+                return (
+                    <div
+                        key={item.label}
+                        className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200"
+                    >
+                        {Icon ? (
+                            <Icon
+                                size={18}
+                                className="shrink-0 text-[#D78FEE]"
+                            />
+                        ) : null}
+                        <span>{item.label}</span>
+                    </div>
+                );
+            })}
+        </div>
+    );
+}
 
 export default function Projects() {
     const featuredProject = projects[0];
@@ -38,14 +91,14 @@ export default function Projects() {
                         y: 0,
                     }}
                     viewport={{ once: true }}
-                    className="mb-20 text-center"
+                    className="mb-12 text-center sm:mb-20"
                 >
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
                         <Sparkles size={16} />
                         <span className="text-sm">Featured Work</span>
                     </div>
 
-                    <h2 className="mt-6 text-5xl font-bold">
+                    <h2 className="mt-6 text-3xl font-bold sm:text-5xl">
                         Selected Projects
                     </h2>
 
@@ -156,39 +209,14 @@ export default function Projects() {
                                         )}
                                     </div>
 
-                                    {/* Highlights */}
+                                    {/* Highlights and project metrics */}
 
-                                    <div className="mt-8 grid grid-cols-2 gap-4">
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            🔐 Authentication
-                                        </div>
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            📊 Dashboard
-                                        </div>
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            ⚡ API Integration
-                                        </div>
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            📱 Responsive
-                                        </div>
-                                    </div>
-
-                                    {/* Featured Project Metrics */}
-
-                                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            🔐 JWT Auth
-                                        </div>
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            👨‍🏫 Tutor System
-                                        </div>
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            💳 Stripe
-                                        </div>
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                            📊 Dashboard
-                                        </div>
-                                    </div>
+                                    <ProjectCallouts
+                                        items={featuredProject.highlights}
+                                    />
+                                    <ProjectCallouts
+                                        items={featuredProject.metrics}
+                                    />
 
                                     {/* Buttons */}
 
@@ -239,7 +267,7 @@ export default function Projects() {
 
                 {/* Other Projects */}
 
-                <div className="mt-12 grid gap-8">
+                <div className="mt-8 grid gap-6 sm:mt-12 sm:gap-8">
                     {otherProjects.map((project, index) => (
                         <motion.div
                             key={project.slug}

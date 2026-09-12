@@ -25,7 +25,7 @@ const stats = [
 export function About() {
     return (
         <section id="about" className="py-20 scroll-mt-24">
-            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-slate-950/80 p-10 shadow-2xl shadow-blue-950/20">
+            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-blue-950/20 sm:p-10">
                 <div className="absolute -right-28 top-8 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
                 <div className="absolute -left-20 bottom-12 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
 
@@ -34,7 +34,7 @@ export function About() {
                         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
                             About Me
                         </p>
-                        <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        <h2 className="text-3xl font-semibold text-white sm:text-5xl">
                             Crafting Digital Experiences
                         </h2>
                         <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
@@ -50,7 +50,7 @@ export function About() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.7 }}
-                            className="rounded-4xl border border-white/10 bg-slate-900/80 p-8"
+                            className="rounded-4xl border border-white/10 bg-slate-900/80 p-5 sm:p-8"
                         >
                             <div className="mb-6 flex items-center gap-3 text-cyan-300">
                                 <Rocket size={24} />

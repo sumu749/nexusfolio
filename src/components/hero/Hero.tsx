@@ -12,7 +12,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16, scale: 0.995 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.85, ease: "easeOut" }}
-            className="min-h-screen relative overflow-hidden py-20"
+            className="relative min-h-screen overflow-hidden py-16 sm:py-20"
         >
             {/* Background Glow */}
             <div className="absolute inset-0 -z-10">
@@ -23,9 +23,9 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="max-w-6xl mx-auto px-6"
+                className="mx-auto max-w-6xl px-1 sm:px-6"
             >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
                     {/* LEFT CONTENT */}
                     <motion.div
                         initial={{ x: -50, opacity: 0 }}
@@ -48,7 +48,7 @@ export function Hero() {
                         </h1>
 
                         <div className="h-20 mb-6">
-                            <p className="text-2xl font-semibold text-gray-300">
+                            <p className="text-xl font-semibold text-gray-300 sm:text-2xl">
                                 <Typewriter
                                     words={[
                                         "Full Stack Developer",
@@ -66,7 +66,7 @@ export function Hero() {
                             </p>
                         </div>
 
-                        <p className="text-lg text-gray-400 mb-8 max-w-xl">
+                        <p className="mb-8 max-w-xl text-base leading-7 text-gray-400 sm:text-lg">
                             I build modern, responsive and user-friendly web
                             applications using React, Next.js, TypeScript and
                             Tailwind CSS. Passionate about crafting beautiful
@@ -74,14 +74,14 @@ export function Hero() {
                         </p>
 
                         {/* Buttons */}
-                        <div className="flex gap-4 mb-8 flex-wrap">
+                        <div className="mb-8 flex flex-wrap gap-3 sm:gap-4">
                             <motion.a
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 href="https://drive.google.com/file/d/1YY47wfGJC_LKuK_9wpXfYjQzjwoBfWCJ/view?usp=drive_link"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition"
+                                className="flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-600 sm:px-6 sm:text-base"
                             >
                                 <ExternalLink size={20} />
                                 View Resume
@@ -91,7 +91,7 @@ export function Hero() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 href="#contact"
-                                className="flex items-center gap-2 px-6 py-3 border border-blue-400 text-blue-400 rounded-lg font-semibold hover:bg-blue-400/10 transition"
+                                className="flex items-center gap-2 rounded-lg border border-blue-400 px-4 py-3 text-sm font-semibold text-blue-400 transition hover:bg-blue-400/10 sm:px-6 sm:text-base"
                             >
                                 <Send size={20} />
                                 Contact Me
@@ -130,7 +130,7 @@ export function Hero() {
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
-                            className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur border border-blue-400/30 rounded-full"
+                            className="mt-8 flex max-w-full flex-wrap items-center justify-center gap-2 rounded-2xl border border-blue-400/30 bg-linear-to-r from-blue-500/20 to-cyan-500/20 px-4 py-3 text-center backdrop-blur sm:inline-flex sm:rounded-full sm:px-6"
                         >
                             <span className="text-sm font-semibold text-gray-300">
                                 React • Next.js • TypeScript • Tailwind •

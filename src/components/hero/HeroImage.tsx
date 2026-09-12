@@ -16,7 +16,7 @@ export default function HeroImage() {
             <div className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl"></div>
 
             {/* Main Card */}
-            <div className="relative rounded-3xl overflow-hidden border border-blue-500/30 bg-linear-to-br from-gray-900/50 to-gray-800/50 backdrop-blur p-6">
+            <div className="relative overflow-hidden rounded-3xl border border-blue-500/30 bg-linear-to-br from-gray-900/50 to-gray-800/50 p-4 backdrop-blur sm:p-6">
                 {/* Animated Border */}
                 <motion.div
                     animate={{ rotate: 360 }}
@@ -86,7 +86,7 @@ export default function HeroImage() {
                     ease: "easeInOut",
                     delay: 0.2,
                 }}
-                className="absolute top-12 -right-5 rounded-full bg-slate-900/95 border border-white/10 shadow-xl px-3 py-2 flex items-center gap-2"
+                className="absolute right-0 top-12 flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/95 px-3 py-2 shadow-xl sm:-right-5"
             >
                 <LayoutDashboard size={18} className="text-blue-400" />
                 <span className="text-sm font-semibold text-white">
@@ -134,7 +134,7 @@ export default function HeroImage() {
                     ease: "easeInOut",
                     delay: 0.15,
                 }}
-                className="absolute top-40 -right-14 rounded-full bg-slate-900/95 border border-white/10 shadow-xl px-3 py-2 flex items-center gap-2"
+                className="absolute right-0 top-40 flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/95 px-3 py-2 shadow-xl sm:-right-14"
             >
                 <Database size={18} className="text-green-400" />
                 <span className="text-sm font-semibold text-white">

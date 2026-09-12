@@ -66,7 +66,7 @@ export default function Contact() {
                     className="text-center"
                 >
                     <span className="text-[#D78FEE]">CONTACT</span>
-                    <h2 className="mt-4 text-5xl font-bold">
+                    <h2 className="mt-4 text-3xl font-bold sm:text-5xl">
                         Let&apos;s Build Something Amazing
                     </h2>
                     <p className="mx-auto mt-5 max-w-2xl text-slate-400">
@@ -75,12 +75,12 @@ export default function Contact() {
                     </p>
                 </motion.div>
 
-                <div className="mt-20 grid gap-10 lg:grid-cols-2">
+                <div className="mt-12 grid gap-6 sm:mt-20 sm:gap-10 lg:grid-cols-2">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
+                        className="rounded-4xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-8"
                     >
                         <h3 className="text-2xl font-bold">Get In Touch</h3>
                         <p className="mt-4 text-slate-400">
@@ -97,7 +97,9 @@ export default function Contact() {
                                 <div>
                                     <p>Email</p>
                                     <span className="text-sm text-slate-400">
-                                        sumaiya.cse.tec@gmail.com
+                                        <span className="break-all">
+                                            sumaiya.cse.tec@gmail.com
+                                        </span>
                                     </span>
                                 </div>
                             </a>
@@ -112,7 +114,9 @@ export default function Contact() {
                                 <div>
                                     <p>Github</p>
                                     <span className="text-sm text-slate-400">
-                                        https://github.com/sumu749
+                                        <span className="break-all">
+                                            https://github.com/sumu749
+                                        </span>
                                     </span>
                                 </div>
                             </a>
@@ -127,7 +131,9 @@ export default function Contact() {
                                 <div>
                                     <p>LinkedIn</p>
                                     <span className="text-sm text-slate-400">
-                                        https://www.linkedin.com/in/sumaiya-alam749/
+                                        <span className="break-all">
+                                            https://www.linkedin.com/in/sumaiya-alam749/
+                                        </span>
                                     </span>
                                 </div>
                             </a>
@@ -139,7 +145,7 @@ export default function Contact() {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="rounded-4xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
+                        className="rounded-4xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-8"
                     >
                         <div className="space-y-5">
                             <input

@@ -17,7 +17,7 @@ export default function Footer() {
                 <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#9B5DE0]/10 blur-[120px]" />
             </div>
 
-            <div className="container mx-auto px-6 py-16">
+            <div className="container mx-auto px-4 py-12 sm:px-6 sm:py-16">
                 <div className="lg:flex lg:items-start lg:justify-between">
                     <div>
                         <Link

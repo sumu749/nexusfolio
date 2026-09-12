@@ -7,7 +7,7 @@ import SkillBadge from "./SkillBadge";
 export function Skills() {
     return (
         <section id="skills" className="py-20 scroll-mt-24">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-10 shadow-2xl shadow-blue-950/20">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-blue-950/20 sm:p-10">
                 <div className="absolute -right-24 top-8 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
                 <div className="absolute -left-24 bottom-12 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
 
@@ -16,7 +16,7 @@ export function Skills() {
                         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
                             Skills
                         </p>
-                        <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        <h2 className="text-3xl font-semibold text-white sm:text-5xl">
                             Technologies I Work With
                         </h2>
                         <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
@@ -26,7 +26,7 @@ export function Skills() {
                         </p>
                     </div>
 
-                    <div className="grid gap-6 lg:grid-cols-3">
+                    <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
                         {skillCategories.map((category, index) => (
                             <motion.div
                                 key={category.title}
@@ -37,7 +37,7 @@ export function Skills() {
                                     duration: 0.7,
                                     delay: index * 0.08,
                                 }}
-                                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur"
+                                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-6"
                             >
                                 <h3 className="mb-4 text-xl font-semibold text-white">
                                     {category.title}

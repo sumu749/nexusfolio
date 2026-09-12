@@ -2,16 +2,16 @@ export const skillCategories = [
     {
         title: "Frontend",
         skills: [
-            "HTML5",
-            "CSS3",
+            "Framer Motion",
+
+            "Tailwind CSS",
             "JavaScript",
             "TypeScript",
             "React",
             "Next.js",
-            "Tailwind CSS",
+            "HTML5",
             "Redux Toolkit",
             "TanStack Query",
-            "Framer Motion",
         ],
     },
 

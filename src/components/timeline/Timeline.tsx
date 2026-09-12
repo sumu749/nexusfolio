@@ -7,7 +7,7 @@ import { timelineData } from "@/data/timeline";
 export default function Timeline() {
     return (
         <section id="education" className="py-20 scroll-mt-24">
-            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-slate-950/80 p-10 shadow-2xl shadow-blue-950/20">
+            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-blue-950/20 sm:p-10">
                 <div className="absolute -right-24 top-12 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
                 <div className="absolute -left-24 bottom-12 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
 
@@ -16,7 +16,7 @@ export default function Timeline() {
                         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
                             Journey
                         </p>
-                        <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        <h2 className="text-3xl font-semibold text-white sm:text-5xl">
                             Education & Experience
                         </h2>
                         <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">

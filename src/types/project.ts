@@ -11,5 +11,12 @@ export interface Project {
     futurePlans: string[];
     overview?: string;
     features?: string[];
+    highlights?: ProjectCallout[];
+    metrics?: ProjectCallout[];
     featured?: boolean;
+}
+
+export interface ProjectCallout {
+    label: string;
+    icon: string;
 }
