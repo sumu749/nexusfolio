@@ -15,7 +15,7 @@ export default function ResumePage() {
 
                     <div className="flex flex-wrap gap-3">
                         <a
-                            href="https://drive.google.com/file/d/1YY47wfGJC_LKuK_9wpXfYjQzjwoBfWCJ/view?usp=drive_link"
+                            href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
@@ -35,7 +35,7 @@ export default function ResumePage() {
 
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl">
                     <iframe
-                        src="https://drive.google.com/file/d/1YY47wfGJC_LKuK_9wpXfYjQzjwoBfWCJ/view?usp=drive_link"
+                        src="/resume.pdf"
                         title="Resume PDF"
                         className="h-[80vh] w-full"
                     />

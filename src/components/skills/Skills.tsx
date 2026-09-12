@@ -7,7 +7,7 @@ import SkillBadge from "./SkillBadge";
 export function Skills() {
     return (
         <section id="skills" className="py-20 scroll-mt-24">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-blue-950/20 sm:p-10">
+            <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-blue-950/20 sm:p-10">
                 <div className="absolute -right-24 top-8 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
                 <div className="absolute -left-24 bottom-12 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
 

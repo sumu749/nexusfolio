@@ -74,7 +74,7 @@ export default function Footer() {
 
                         <div className="mt-8">
                             <a
-                                href="https://drive.google.com/file/d/1YY47wfGJC_LKuK_9wpXfYjQzjwoBfWCJ/view?usp=drive_link"
+                                href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex rounded-full bg-linear-to-r from-[#4E56C0] to-[#9B5DE0] px-5 py-3 text-sm font-medium"
